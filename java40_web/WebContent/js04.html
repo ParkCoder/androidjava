@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function sum(x,y) {
+		alert('두수의 합은'+(x+y))
+	}
+	function check() {
+		data = prompt('ID입력하세요')
+		result=false
+		if (data.length == 0) {
+			alert('ID를 입력안했음')
+		}else{
+			alert('당신이 입력한 ID는 '+data)
+			result=true
+		}
+		return result;
+	}
+	function same() {
+		/* x1 = prompt('비밀번호 입력')
+		x2 = prompt('비밀번호 확인') */
+		x1=document.getElementById('pw1').value
+		x2=document.getElementById('pw2').value
+		
+		if (x1==x2) { //==: 타입상관없이 비교 가능
+					  //===: 타입도 비교할 때 사용
+			alert('비밀번호 확인 완료')
+		}else{
+			alert('입력한 비밀번호가 다릅니다.')
+		}
+		/* result2 = check()
+		alert('ID체크 결과는'+result2) */
+	}
+</script>
+</head>
+<body>
+	<button onclick="sum(300,200)">더하기</button>
+	<br>
+	<button onclick="check()">입력값 넣었는지 체크</button>
+	<br>
+	<hr>
+	패스워드 입력  <input type="text" id="pw1" name="pw1"><br>
+	패스워드 확인  <input type="text" id="pw2" name="pw2"><br>
+	<button onclick="same()">입력값 동일한지 체크</button>
+
+</body>
+</html>

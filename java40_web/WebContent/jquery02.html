@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+	$('#b1').click(function() {
+		p1 = $('#in1').val()
+		p2 = $('#in2').val()
+		
+		if (p1==p2) {
+			$('div').html('<font color=green><b>잘했어!</b></font>')
+		}else{
+			$('div').html('<font color=red><b>똑바로 입력해..</b></font>')
+		}
+		$('div').ht
+	})
+})
+
+
+
+
+</script>
+</head>
+<body>
+<h2 style="color: blue">똑같은 숫자를 입력하시오!!</h2>
+<b>입력해라</b> <input type="text" id="in1"><br>
+<b>똑같이 입력해라</b> <input type="text" id="in2"><br>
+<br>
+<div>잘했나볼까!?</div>
+
+<button id="b1">확인하기</button>
+
+</body>
+</html>

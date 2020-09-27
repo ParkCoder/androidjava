@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function check() {
+		idValue = document.getElementById('id2').value
+	
+		if (idValue.length == 0) {
+			document.getElementById('idresult').innerHTML='<font color=red>아이디를 입력해주세요!'
+		}else{
+			document.getElementById('idresult').innerHTML='<font color=blue>아이디 입력확인!'
+		}
+	}
+	
+	function check1() {
+		id = document.getElementById('id2').value
+	
+		if (id.length >= 5) {
+			location.href = 'equal.jsp?id='+id
+		}else{
+			document.getElementById('idresult').innerHTML='<font color=red>아이디를 5글자 이상 입력해주세요!'
+		}
+	}
+	
+	
+	
+	function samepw() {
+		idValue = document.getElementById('id2').value
+		pw1Value=document.getElementById('pw1').value
+		pw2Value=document.getElementById('pw2').value
+		
+		if (pw1Value==pw2Value) {
+				alert('패스워드 일치!')
+				location.href='login.jsp?id='+idValue+'&pw='+pw1Value
+			
+		}else{
+			alert('패스워드 불일치! 다시 입력하세요!')
+		}
+	}
+	
+</script>
+</head>
+<body>
+
+
+	<h1>KM</h1>
+	<h3>아이디</h3>
+	<input type="text" id="id2">
+	<div id="idresult"></div>
+	<br>
+	<button onclick="check()">입력확인</button>
+	<button onclick="check1()">5글자확인&중복확인</button>
+	
+
+	<h3>비밀번호</h3>
+	<input type="text" id="pw1">
+	<h3>비밀번호 확인</h3>
+	<input type="text" id="pw2">
+	<br>
+	<div id="pwresult"></div>
+	<br>
+	<button onclick="samepw()">비밀번호 확인</button>
+	
+
+</body>
+</html>
