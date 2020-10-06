@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>성적 확인</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#but1').click(function() {
+
+			$.ajax({
+				url : 'call2.jsp',
+				data : {
+					point : $('#in1').val()
+				},
+				success : function(result) {
+					if (result == '최우수' || result == '우수') {
+						alert('시험 통과!!')
+					} else {
+						alert('재시험!!!')
+					}
+				}
+
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<input id="in1" type="text">
+	<button id="but1">성적확인</button>
+</body>
+</html>

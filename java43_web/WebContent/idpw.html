@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function() {
+	//비밀번호 일치 여부 확인
+	$('#pw1').keyup(function() {
+		$.ajax({
+			url: "pw.jsp",
+			data:{
+				pw: $('#pw').val(),
+				pw1: $('#pw1').val()
+			},
+			success: function(result) {
+				console.log(result)
+				$('#d1').html(result)
+			}
+		})
+	})
+	//아이디 5글자 이상 길이 확인
+	$('#id').keyup(function() {
+		$.ajax({
+			url: "id.jsp",
+			data:{
+				id: $('#id').val()
+			},
+			success: function(result) {
+				console.log(result)
+				$('#d2').html(result)
+			}
+		})
+	})
+	
+})
+
+
+
+
+
+</script>
+</head>
+<body>
+<div style="margin: 0px auto; width: 600px;">
+<h3>아이디</h3>
+<input type="text" id="id" style="height: 30px; width: 200px;" placeholder="ID를 5글자 이상 입력하세요">
+<h3>비밀번호</h3>
+<input type="text" id="pw" style="height: 30px; width: 200px;" placeholder="비밀번호 입력">
+<h3>비밀번호 확인</h3>
+<input type="text" id="pw1" style="height: 30px; width: 200px;" placeholder="비밀번호 확인">
+<br><br>
+<hr style="border-color: red; width: 600px;">
+<!-- <button id="pwCheck">비밀번호 동일 여부</button> -->
+<div id="d1"></div>
+<div id="d2"></div>
+</div>
+</body>
+</html>
